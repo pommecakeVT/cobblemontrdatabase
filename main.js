@@ -56,8 +56,8 @@ player.game = "Hors ligne";
 // ✅ Tri
 playerData.sort((a, b) => {
 if (a.isLive && b.isLive) {
-if (a.game.toLowerCase().includes("redemption II") && !b.game.toLowerCase().includes("redemption II")) return -1;
-if (!a.game.toLowerCase().includes("redemption II") && b.game.toLowerCase().includes("redemption II")) return 1;
+if (a.game.toLowerCase().includes("minecraft") && !b.game.toLowerCase().includes("minecraft")) return -1;
+if (!a.game.toLowerCase().includes("minecraft") && b.game.toLowerCase().includes("minecraft")) return 1;
 }
 if (a.isLive && !b.isLive) return -1;
 if (!a.isLive && b.isLive) return 1;
@@ -342,8 +342,8 @@ const twitchEmbed = document.getElementById("popup-twitch");
 const twitchChat = document.getElementById("popup-chat");
 
 if (player.twitch) {
-twitchEmbed.src = `https://player.twitch.tv/?channel=${player.twitch}&parent=blueredemption2.carrd.co`;
-twitchChat.src = `https://www.twitch.tv/embed/${player.twitch}/chat?darkpopout&parent=blueredemption2.carrd.co`;
+twitchEmbed.src = `https://player.twitch.tv/?channel=${player.twitch}&parent=cobblemontrinity.carrd.co`;
+twitchChat.src = `https://www.twitch.tv/embed/${player.twitch}/chat?darkpopout&parent=cobblemontrinity.carrd.co`;
 } else {
 twitchEmbed.src = "";
 twitchChat.src = "";

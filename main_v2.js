@@ -1,7 +1,14 @@
+// ==========================================================
+// Cobblemon : Trinity — script joueurs / Twitch (version fusionnée)
+// ⚠️ IMPORTANT : penser à régénérer/vérifier régulièrement le
+// accessToken (les tokens Twitch expirent, en général sous 60 jours).
+// ==========================================================
+
 // ----- Config -----
 const TWITCH_CLIENT_ID = "gp762nuuoqcoxypju8c569th9wz7q5";
 const TWITCH_ACCESS_TOKEN = "79v1l8ku6pve2me1o9ggjpjorozzcl";
 
+// ✅ Domaine parent corrigé (avant: blueredemption2.carrd.co, reliquat de l'ancien projet)
 const PARENT_DOMAIN = "cobblemontrinity.carrd.co";
 
 const PLAYERDATA_URL = "https://raw.githubusercontent.com/pommecakeVT/BRDATABASE/refs/heads/main/twitchv2";
@@ -152,7 +159,7 @@ function updateAvatars(allStreams, allUsers, playerData) {
 
     let borderColor = "#B7B3AC"; // offline
     if (isLive) {
-      borderColor = liveInfo.game_id === "27471" ? "#5FAF5F" : "#F2D171";
+      borderColor = liveInfo.game_id === "27471" ? "#5FAF5F" : "#F2D171"; // 27471 = Minecraft
     }
 
     if (userInfo && userInfo.profile_image_url) {
@@ -162,6 +169,41 @@ function updateAvatars(allStreams, allUsers, playerData) {
     img.parentElement.style.borderColor = borderColor;
     img.classList.toggle("online", isLive);
     img.classList.toggle("offline", !isLive);
+
+    // ✅ on stocke isLive/game sur l'objet joueur pour le tri
+    player.isLive = isLive;
+    player.game = isLive ? (liveInfo.game_name || "Autre") : "Hors ligne";
+  });
+}
+
+// ==========================================================
+// Tri (live en priorité, puis alphabétique) + réordonnancement DOM
+// ⚠️ le filtre "redemption II" vient de l'ancien projet Blue Redemption,
+// à adapter/retirer si ça ne correspond plus au contexte Cobblemon
+// ==========================================================
+function sortPlayers(playerData) {
+  return [...playerData].sort((a, b) => {
+    const aGame = (a.game || "").toLowerCase();
+    const bGame = (b.game || "").toLowerCase();
+
+    if (a.isLive && b.isLive) {
+      if (aGame.includes("redemption ii") && !bGame.includes("redemption ii")) return -1;
+      if (!aGame.includes("redemption ii") && bGame.includes("redemption ii")) return 1;
+    }
+    if (a.isLive && !b.isLive) return -1;
+    if (!a.isLive && b.isLive) return 1;
+    return a.twitch.localeCompare(b.twitch);
+  });
+}
+
+function reorderPlayerList(playerData) {
+  const container = document.getElementById("playerList");
+  if (!container) return;
+
+  const sorted = sortPlayers(playerData);
+  sorted.forEach(player => {
+    const node = container.querySelector(`[data-player-id="${player.id}"]`);
+    if (node) container.appendChild(node); // déplace le noeud à la fin dans le nouvel ordre
   });
 }
 
@@ -183,6 +225,7 @@ async function checkLiveStatus() {
     const { allStreams, allUsers } = await fetchTwitchData(playerData);
     updateCounters(allStreams);
     updateAvatars(allStreams, allUsers, playerData);
+    reorderPlayerList(playerData); // ✅ re-tri dynamique à chaque refresh
   } catch (err) {
     console.error("❌ Erreur checkLiveStatus:", err);
   }

@@ -1,7 +1,14 @@
+// ==========================================================
+// Cobblemon : Trinity — script joueurs / Twitch (version fusionnée)
+// ⚠️ IMPORTANT : penser à régénérer/vérifier régulièrement le
+// accessToken (les tokens Twitch expirent, en général sous 60 jours).
+// ==========================================================
+
 // ----- Config -----
 const TWITCH_CLIENT_ID = "gp762nuuoqcoxypju8c569th9wz7q5";
 const TWITCH_ACCESS_TOKEN = "79v1l8ku6pve2me1o9ggjpjorozzcl";
 
+// ✅ Domaine parent corrigé (avant: blueredemption2.carrd.co, reliquat de l'ancien projet)
 const PARENT_DOMAIN = "cobblemontrinity.carrd.co";
 
 const PLAYERDATA_URL = "https://raw.githubusercontent.com/pommecakeVT/BRDATABASE/refs/heads/main/twitchv2";
@@ -163,23 +170,26 @@ function updateAvatars(allStreams, allUsers, playerData) {
     img.classList.toggle("online", isLive);
     img.classList.toggle("offline", !isLive);
 
-    // ✅ on stocke isLive/game sur l'objet joueur pour le tri
+    // ✅ on stocke isLive/game/gameId sur l'objet joueur pour le tri
     player.isLive = isLive;
     player.game = isLive ? (liveInfo.game_name || "Autre") : "Hors ligne";
+    player.gameId = isLive ? liveInfo.game_id : null;
   });
 }
 
 // ==========================================================
 // Tri (live en priorité, puis alphabétique) + réordonnancement DOM
+// Priorité: joueurs live sur Minecraft (game_id 27471) en premier
 // ==========================================================
+const PRIORITY_GAME_ID = "27471"; // Minecraft
+
 function sortPlayers(playerData) {
   return [...playerData].sort((a, b) => {
-    const aGame = (a.game || "").toLowerCase();
-    const bGame = (b.game || "").toLowerCase();
-
     if (a.isLive && b.isLive) {
-      if (aGame.includes("minecraft") && !bGame.includes("minecraft")) return -1;
-      if (!aGame.includes("minecraft") && bGame.includes("minecraft")) return 1;
+      const aPriority = a.gameId === PRIORITY_GAME_ID;
+      const bPriority = b.gameId === PRIORITY_GAME_ID;
+      if (aPriority && !bPriority) return -1;
+      if (!aPriority && bPriority) return 1;
     }
     if (a.isLive && !b.isLive) return -1;
     if (!a.isLive && b.isLive) return 1;
@@ -208,18 +218,43 @@ async function checkLiveStatus() {
     return;
   }
 
-  if (!hasRenderedList) {
-    renderPlayerList(playerData);
-  }
-
   try {
     const { allStreams, allUsers } = await fetchTwitchData(playerData);
+
+    // ✅ On ne garde que les joueurs dont le pseudo Twitch existe réellement
+    // (/helix/users ne renvoie rien pour un login supprimé/renommé, live ou pas)
+    const validPlayers = playerData.filter(p =>
+      allUsers.some(u => u.login.toLowerCase() === p.twitch.toLowerCase())
+    );
+
+    // Retire du DOM les joueurs qui existaient avant mais plus maintenant
+    if (hasRenderedList) {
+      removeStalePlayers(validPlayers);
+    }
+
+    if (!hasRenderedList) {
+      renderPlayerList(validPlayers);
+    }
+
     updateCounters(allStreams);
-    updateAvatars(allStreams, allUsers, playerData);
-    reorderPlayerList(playerData); // ✅ re-tri dynamique à chaque refresh
+    updateAvatars(allStreams, allUsers, validPlayers);
+    reorderPlayerList(validPlayers);
   } catch (err) {
     console.error("❌ Erreur checkLiveStatus:", err);
   }
+}
+
+// ✅ Supprime du DOM les cartes joueurs dont le pseudo n'existe plus sur Twitch
+function removeStalePlayers(validPlayers) {
+  const container = document.getElementById("playerList");
+  if (!container) return;
+
+  const validIds = new Set(validPlayers.map(p => p.id));
+  container.querySelectorAll("[data-player-id]").forEach(node => {
+    if (!validIds.has(node.dataset.playerId)) {
+      node.remove();
+    }
+  });
 }
 
 // ==========================================================

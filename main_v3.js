@@ -1,14 +1,7 @@
-// ==========================================================
-// Cobblemon : Trinity — script joueurs / Twitch (version fusionnée)
-// ⚠️ IMPORTANT : penser à régénérer/vérifier régulièrement le
-// accessToken (les tokens Twitch expirent, en général sous 60 jours).
-// ==========================================================
-
 // ----- Config -----
 const TWITCH_CLIENT_ID = "gp762nuuoqcoxypju8c569th9wz7q5";
 const TWITCH_ACCESS_TOKEN = "79v1l8ku6pve2me1o9ggjpjorozzcl";
 
-// ✅ Domaine parent corrigé (avant: blueredemption2.carrd.co, reliquat de l'ancien projet)
 const PARENT_DOMAIN = "cobblemontrinity.carrd.co";
 
 const PLAYERDATA_URL = "https://raw.githubusercontent.com/pommecakeVT/BRDATABASE/refs/heads/main/twitchv2";
@@ -178,8 +171,6 @@ function updateAvatars(allStreams, allUsers, playerData) {
 
 // ==========================================================
 // Tri (live en priorité, puis alphabétique) + réordonnancement DOM
-// ⚠️ le filtre "redemption II" vient de l'ancien projet Blue Redemption,
-// à adapter/retirer si ça ne correspond plus au contexte Cobblemon
 // ==========================================================
 function sortPlayers(playerData) {
   return [...playerData].sort((a, b) => {
@@ -187,8 +178,8 @@ function sortPlayers(playerData) {
     const bGame = (b.game || "").toLowerCase();
 
     if (a.isLive && b.isLive) {
-      if (aGame.includes("redemption ii") && !bGame.includes("redemption ii")) return -1;
-      if (!aGame.includes("redemption ii") && bGame.includes("redemption ii")) return 1;
+      if (aGame.includes("minecraft") && !bGame.includes("minecraft")) return -1;
+      if (!aGame.includes("minecraft") && bGame.includes("minecraft")) return 1;
     }
     if (a.isLive && !b.isLive) return -1;
     if (!a.isLive && b.isLive) return 1;

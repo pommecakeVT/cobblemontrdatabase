@@ -1,0 +1,998 @@
+[
+{"id": "PLAYER001", "twitter": "https://x.com/AidenSuzuno"},
+{"id": "PLAYER002", "twitter": "https://x.com/Akachan_VT"},
+{"id": "PLAYER003", "twitter": "http://twitter.com/AliceAkage"},
+{"id": "PLAYER004", "twitter": "https://x.com/Al_W0onder"},
+{"id": "PLAYER005", "twitter": "https://x.com/All_CeaN"},
+{"id": "PLAYER006", "twitter": "https://x.com/AshleyPlateada"},
+{"id": "PLAYER007", "twitter": "https://twitter.com/AstorNemura"},
+{"id": "PLAYER008", "twitter": "https://x.com/AurennDwargonVT"},
+{"id": "PLAYER009", "twitter": "https://twitter.com/BarbakVT"},
+{"id": "PLAYER010", "twitter": "https://x.com/BattOkami"},
+{"id": "PLAYER011", "twitter": "https://x.com/BaysoneVT"},
+{"id": "PLAYER012", "twitter": "https://x.com/MrHaggot"},
+{"id": "PLAYER013", "twitter": "https://twitter.com/Chaton_Premier"},
+{"id": "PLAYER014", "twitter": "https://x.com/ChicaCross_"},
+{"id": "PLAYER015", "twitter": "https://x.com/Chuggoth"},
+{"id": "PLAYER016", "twitter": "https://x.com/CitronVolant27"},
+{"id": "PLAYER017", "twitter": "https://x.com/Daeriselda"},
+{"id": "PLAYER018", "twitter": "https://twitter.com/DarumaNico"},
+{"id": "PLAYER019", "twitter": "https://twitter.com/E__Gloo"},
+{"id": "PLAYER020", "twitter": "https://twitter.com/echorosen"},
+{"id": "PLAYER021", "twitter": "https://x.com/EinThefool"},
+{"id": "PLAYER022", "twitter": "ekimeiji"},
+{"id": "PLAYER023", "twitter": "ekyuvt"},
+{"id": "PLAYER024", "twitter": "elzbietatv"},
+{"id": "PLAYER025", "twitter": "ema_deus"},
+{"id": "PLAYER026", "twitter": "endoku_chan"},
+{"id": "PLAYER027", "twitter": "Esliane"},
+{"id": "PLAYER028", "twitter": "evosyl"},
+{"id": "PLAYER029", "twitter": "falkorfarland"},
+{"id": "PLAYER030", "twitter": "Fengaryx"},
+{"id": "PLAYER031", "twitter": "FraiseSanguine"},
+{"id": "PLAYER032", "twitter": "gallifan"},
+{"id": "PLAYER033", "twitter": "hana_momiji"},
+{"id": "PLAYER034", "twitter": "Hanamar0u"},
+{"id": "PLAYER035", "twitter": "hatiivt"},
+{"id": "PLAYER036", "twitter": "HildaMist"},
+{"id": "PLAYER037", "twitter": "hiwamariri"},
+{"id": "PLAYER038", "twitter": "homu_vt"},
+{"id": "PLAYER039", "twitter": "hosarny"},
+{"id": "PLAYER040", "twitter": "hungerneko"},
+{"id": "PLAYER041", "twitter": "ikeaht"},
+{"id": "PLAYER042", "twitter": "Katarsae_abel"},
+{"id": "PLAYER043", "twitter": "katchanvt"},
+{"id": "PLAYER044", "twitter": "Keola"},
+{"id": "PLAYER045", "twitter": "khronosnobody"},
+{"id": "PLAYER046", "twitter": "Kikitchiwi"},
+{"id": "PLAYER047", "twitter": "krwakrwa"},
+{"id": "PLAYER048", "twitter": "la_ptite_tsu"},
+{"id": "PLAYER049", "twitter": "LaRoketteSalade"},
+{"id": "PLAYER050", "twitter": "Lazurine_"},
+{"id": "PLAYER051", "twitter": "LillouneHanae"},
+{"id": "PLAYER052", "twitter": "loona__vt"},
+{"id": "PLAYER053", "twitter": "Lumarisson"},
+{"id": "PLAYER054", "twitter": "lunaderevt"},
+{"id": "PLAYER055", "twitter": "mademoisellemarguerite"},
+{"id": "PLAYER056", "twitter": "maili_vt"},
+{"id": "PLAYER057", "twitter": "malidoudou"},
+{"id": "PLAYER058", "twitter": "manaryuujin"},
+{"id": "PLAYER059", "twitter": "Margauffre"},
+{"id": "PLAYER060", "twitter": "Mayjuuny"},
+{"id": "PLAYER061", "twitter": "Meeilye"},
+{"id": "PLAYER062", "twitter": "Mellumine"},
+{"id": "PLAYER063", "twitter": "Mevolie"},
+{"id": "PLAYER064", "twitter": "Micku_san"},
+{"id": "PLAYER065", "twitter": "moememuri"},
+{"id": "PLAYER066", "twitter": "mommysillica"},
+{"id": "PLAYER067", "twitter": "myzkii_"},
+{"id": "PLAYER068", "twitter": "nekolunavt"},
+{"id": "PLAYER069", "twitter": "Neolorem"},
+{"id": "PLAYER070", "twitter": "NyaoShu"},
+{"id": "PLAYER071", "twitter": "okamiartfurry"},
+{"id": "PLAYER072", "twitter": "okanyaan_"},
+{"id": "PLAYER073", "twitter": "OkPlonk"},
+{"id": "PLAYER074", "twitter": "orion_yamato"},
+{"id": "PLAYER075", "twitter": "pawa_chan"},
+{"id": "PLAYER076", "twitter": "peachypiwie"},
+{"id": "PLAYER077", "twitter": "pinpxnn"},
+{"id": "PLAYER078", "twitter": "PLP_Poulpy"},
+{"id": "PLAYER079", "twitter": "pommecake"},
+{"id": "PLAYER080", "twitter": "poussissi"},
+{"id": "PLAYER081", "twitter": "Riqsop"},
+{"id": "PLAYER082", "twitter": "ryuuna_vt"},
+{"id": "PLAYER083", "twitter": "shiholitchi"},
+{"id": "PLAYER084", "twitter": "Shroom98"},
+{"id": "PLAYER085", "twitter": "shuta_saori"},
+{"id": "PLAYER086", "twitter": "SoulBrook"},
+{"id": "PLAYER087", "twitter": "Sumashu"},
+{"id": "PLAYER088", "twitter": "SuneeToo"},
+{"id": "PLAYER089", "twitter": "Sunyah"},
+{"id": "PLAYER090", "twitter": "titcaro1_"},
+{"id": "PLAYER091", "twitter": "Tylupo"},
+{"id": "PLAYER092", "twitter": "umbriavt"},
+{"id": "PLAYER093", "twitter": "UnePlanteEnPot"},
+{"id": "PLAYER094", "twitter": "valdrac0"},
+{"id": "PLAYER095", "twitter": "Volpoune"},
+{"id": "PLAYER096", "twitter": "waffu_vt"},
+{"id": "PLAYER097", "twitter": "wafwaffle_"},
+{"id": "PLAYER098", "twitter": "Wolfka_vtuberfr"},
+{"id": "PLAYER099", "twitter": "yhusky_kun"},
+{"id": "PLAYER100", "twitter": "yuiicky"},
+{"id": "PLAYER101", "twitter": "yuna_channel"},
+{"id": "PLAYER102", "twitter": "yuu_vt"},
+{"id": "PLAYER103", "twitter": "Yuweiart"},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+]
+
+

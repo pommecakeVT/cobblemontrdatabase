@@ -147,38 +147,46 @@ function renderPlayerList(playerData) {
 }
 
 // ==========================================================
-// Mise à jour des avatars / statuts live (sans reconstruire le DOM)
+// Résolution des données joueur (pseudo, statut live) — pas de DOM ici
 // ==========================================================
-function updateAvatars(allStreams, allUsers, playerData) {
+function resolvePlayerMeta(allStreams, allUsers, playerData) {
   playerData.forEach(player => {
-    const img = document.getElementById(player.id);
-    if (!img) return;
-
     const pid = String(player.twitch);
     const liveInfo = allStreams.find(s => s.user_id === pid);
     const userInfo = allUsers.find(u => u.id === pid);
     const isLive = !!liveInfo;
 
-    let borderColor = "#B7B3AC"; // offline
-    if (isLive) {
-      borderColor = liveInfo.game_id === "27471" ? "#5FAF5F" : "#F2D171"; // 27471 = Minecraft
-    }
-
     if (userInfo) {
       // ✅ résolution ID -> login/display_name (nécessaire pour les embeds Twitch et l'affichage du pseudo)
       player.twitchLogin = userInfo.login;
       player.twitchDisplayName = userInfo.display_name;
-      if (userInfo.profile_image_url) img.src = userInfo.profile_image_url;
+      player.twitchAvatar = userInfo.profile_image_url || null;
     }
 
-    img.parentElement.style.borderColor = borderColor;
-    img.classList.toggle("online", isLive);
-    img.classList.toggle("offline", !isLive);
-
-    // ✅ on stocke isLive/game/gameId sur l'objet joueur pour le tri
     player.isLive = isLive;
     player.game = isLive ? (liveInfo.game_name || "Autre") : "Hors ligne";
     player.gameId = isLive ? liveInfo.game_id : null;
+  });
+}
+
+// ==========================================================
+// Mise à jour visuelle des avatars / statuts (le DOM doit déjà exister)
+// ==========================================================
+function updateAvatars(playerData) {
+  playerData.forEach(player => {
+    const img = document.getElementById(player.id);
+    if (!img) return;
+
+    let borderColor = "#B7B3AC"; // offline
+    if (player.isLive) {
+      borderColor = player.gameId === "27471" ? "#5FAF5F" : "#F2D171"; // 27471 = Minecraft
+    }
+
+    if (player.twitchAvatar) img.src = player.twitchAvatar;
+
+    img.parentElement.style.borderColor = borderColor;
+    img.classList.toggle("online", player.isLive);
+    img.classList.toggle("offline", !player.isLive);
   });
 }
 
@@ -232,6 +240,10 @@ async function checkLiveStatus() {
       allUsers.some(u => u.id === String(p.twitch))
     );
 
+    // ✅ Résout pseudo/statut live AVANT de construire le HTML,
+    // sinon le nom affiché retombe sur l'ID brut au premier rendu
+    resolvePlayerMeta(allStreams, allUsers, validPlayers);
+
     // Retire du DOM les joueurs qui existaient avant mais plus maintenant
     if (hasRenderedList) {
       removeStalePlayers(validPlayers);
@@ -242,7 +254,7 @@ async function checkLiveStatus() {
     }
 
     updateCounters(allStreams);
-    updateAvatars(allStreams, allUsers, validPlayers);
+    updateAvatars(validPlayers);
     reorderPlayerList(validPlayers);
   } catch (err) {
     console.error("❌ Erreur checkLiveStatus:", err);

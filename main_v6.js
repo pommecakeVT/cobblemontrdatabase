@@ -18,6 +18,7 @@ const SOCIAL_URLS = {
   tiktok: "https://raw.githubusercontent.com/pommecakeVT/cobblemontrdatabase/refs/heads/main/tiktok",
   twitter: "https://raw.githubusercontent.com/pommecakeVT/cobblemontrdatabase/refs/heads/main/twitter",
   youtube: "https://raw.githubusercontent.com/pommecakeVT/cobblemontrdatabase/refs/heads/main/youtube",
+  vgen: "https://raw.githubusercontent.com/pommecakeVT/cobblemontrdatabase/refs/heads/main/vgen",
 };
 const FALLBACK_AVATAR = "https://i.ibb.co/NgTXMdDW/twitch-update.gif";
 
@@ -52,7 +53,7 @@ async function loadPlayerData(force = false) {
 }
 
 // ==========================================================
-// Appels Twitch (streams + users, en chunks de 50)
+// Appels Twitch (streams + users, en chunks de 50) — par ID Twitch
 // ==========================================================
 async function fetchTwitchData(playerData) {
   const chunkSize = 50;
@@ -65,15 +66,15 @@ async function fetchTwitchData(playerData) {
   let allUsers = [];
 
   await Promise.all(chunks.map(async (chunk) => {
-    const logins = chunk.map(p => (p.twitch || "").toLowerCase()).filter(Boolean);
-    if (logins.length === 0) return;
+    const ids = chunk.map(p => String(p.twitch || "").trim()).filter(Boolean);
+    if (ids.length === 0) return;
 
     const headers = {
       "Client-ID": TWITCH_CLIENT_ID,
       "Authorization": `Bearer ${TWITCH_ACCESS_TOKEN}`,
     };
 
-    const streamUrl = `https://api.twitch.tv/helix/streams?user_login=${logins.join("&user_login=")}`;
+    const streamUrl = `https://api.twitch.tv/helix/streams?user_id=${ids.join("&user_id=")}`;
     const streamRes = await fetch(streamUrl, { headers });
     if (streamRes.ok) {
       const s = await streamRes.json();
@@ -82,7 +83,7 @@ async function fetchTwitchData(playerData) {
       console.error("❌ Erreur streams:", streamRes.status, await streamRes.text());
     }
 
-    const userUrl = `https://api.twitch.tv/helix/users?${logins.map(u => "login=" + u).join("&")}`;
+    const userUrl = `https://api.twitch.tv/helix/users?${ids.map(id => "id=" + id).join("&")}`;
     const userRes = await fetch(userUrl, { headers });
     if (userRes.ok) {
       const u = await userRes.json();
@@ -138,7 +139,7 @@ function renderPlayerList(playerData) {
              src="${player.avatar || FALLBACK_AVATAR}"
              onclick="openPopup('${player.id}')" />
       </div>
-      <p class="player-name">${player.twitch}</p>
+      <p class="player-name">${player.twitchDisplayName || player.twitchLogin || player.twitch}</p>
     </div>
   `).join("");
 
@@ -153,8 +154,9 @@ function updateAvatars(allStreams, allUsers, playerData) {
     const img = document.getElementById(player.id);
     if (!img) return;
 
-    const liveInfo = allStreams.find(s => s.user_login.toLowerCase() === player.twitch.toLowerCase());
-    const userInfo = allUsers.find(u => u.login.toLowerCase() === player.twitch.toLowerCase());
+    const pid = String(player.twitch);
+    const liveInfo = allStreams.find(s => s.user_id === pid);
+    const userInfo = allUsers.find(u => u.id === pid);
     const isLive = !!liveInfo;
 
     let borderColor = "#B7B3AC"; // offline
@@ -162,8 +164,11 @@ function updateAvatars(allStreams, allUsers, playerData) {
       borderColor = liveInfo.game_id === "27471" ? "#5FAF5F" : "#F2D171"; // 27471 = Minecraft
     }
 
-    if (userInfo && userInfo.profile_image_url) {
-      img.src = userInfo.profile_image_url;
+    if (userInfo) {
+      // ✅ résolution ID -> login/display_name (nécessaire pour les embeds Twitch et l'affichage du pseudo)
+      player.twitchLogin = userInfo.login;
+      player.twitchDisplayName = userInfo.display_name;
+      if (userInfo.profile_image_url) img.src = userInfo.profile_image_url;
     }
 
     img.parentElement.style.borderColor = borderColor;
@@ -193,7 +198,7 @@ function sortPlayers(playerData) {
     }
     if (a.isLive && !b.isLive) return -1;
     if (!a.isLive && b.isLive) return 1;
-    return a.twitch.localeCompare(b.twitch);
+    return (a.twitchLogin || String(a.twitch)).localeCompare(b.twitchLogin || String(b.twitch));
   });
 }
 
@@ -221,10 +226,10 @@ async function checkLiveStatus() {
   try {
     const { allStreams, allUsers } = await fetchTwitchData(playerData);
 
-    // ✅ On ne garde que les joueurs dont le pseudo Twitch existe réellement
-    // (/helix/users ne renvoie rien pour un login supprimé/renommé, live ou pas)
+    // ✅ On ne garde que les joueurs dont l'ID Twitch existe réellement
+    // (/helix/users ne renvoie rien pour un ID supprimé, live ou pas)
     const validPlayers = playerData.filter(p =>
-      allUsers.some(u => u.login.toLowerCase() === p.twitch.toLowerCase())
+      allUsers.some(u => u.id === String(p.twitch))
     );
 
     // Retire du DOM les joueurs qui existaient avant mais plus maintenant
@@ -303,6 +308,7 @@ async function updateSocialLinks(playerId) {
   setBtn("tiktok", "tiktok");
   setBtn("twitter", "twitter");
   setBtn("youtube", "youtube");
+  setBtn("vgen", "vgen");
 }
 
 // ==========================================================
@@ -326,10 +332,13 @@ window.openPopup = async function (playerId) {
   const twitchEmbed = document.getElementById("popup-twitch");
   const twitchChat = document.getElementById("popup-chat");
 
-  if (player.twitch) {
-    twitchEmbed.src = `https://player.twitch.tv/?channel=${player.twitch}&parent=${PARENT_DOMAIN}`;
-    twitchChat.src = `https://www.twitch.tv/embed/${player.twitch}/chat?darkpopout&parent=${PARENT_DOMAIN}`;
+  const channelLogin = player.twitchLogin; // login résolu depuis l'ID Twitch
+
+  if (channelLogin) {
+    twitchEmbed.src = `https://player.twitch.tv/?channel=${channelLogin}&parent=${PARENT_DOMAIN}`;
+    twitchChat.src = `https://www.twitch.tv/embed/${channelLogin}/chat?darkpopout&parent=${PARENT_DOMAIN}`;
   } else {
+    console.warn(`⚠️ Login Twitch pas encore résolu pour l'ID ${player.twitch}, réessaie après le prochain refresh.`);
     twitchEmbed.src = "";
     twitchChat.src = "";
   }

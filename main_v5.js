@@ -11,13 +11,13 @@ const TWITCH_ACCESS_TOKEN = "79v1l8ku6pve2me1o9ggjpjorozzcl";
 // ✅ Domaine parent corrigé (avant: blueredemption2.carrd.co, reliquat de l'ancien projet)
 const PARENT_DOMAIN = "cobblemontrinity.carrd.co";
 
-const PLAYERDATA_URL = "https://raw.githubusercontent.com/pommecakeVT/BRDATABASE/refs/heads/main/twitchv2";
+const PLAYERDATA_URL = "https://raw.githubusercontent.com/pommecakeVT/cobblemontrdatabase/refs/heads/main/twitchv2";
 const SOCIAL_URLS = {
-  bluesky: "https://raw.githubusercontent.com/pommecakeVT/BRDATABASE/refs/heads/main/bluesky",
-  instagram: "https://raw.githubusercontent.com/pommecakeVT/BRDATABASE/refs/heads/main/instagram",
-  tiktok: "https://raw.githubusercontent.com/pommecakeVT/BRDATABASE/refs/heads/main/tiktok",
-  twitter: "https://raw.githubusercontent.com/pommecakeVT/BRDATABASE/refs/heads/main/twitter",
-  youtube: "https://raw.githubusercontent.com/pommecakeVT/BRDATABASE/refs/heads/main/youtube",
+  bluesky: "https://raw.githubusercontent.com/pommecakeVT/cobblemontrdatabase/refs/heads/main/bluesky",
+  instagram: "https://raw.githubusercontent.com/pommecakeVT/cobblemontrdatabase/refs/heads/main/instagram",
+  tiktok: "https://raw.githubusercontent.com/pommecakeVT/cobblemontrdatabase/refs/heads/main/tiktok",
+  twitter: "https://raw.githubusercontent.com/pommecakeVT/cobblemontrdatabase/refs/heads/main/twitter",
+  youtube: "https://raw.githubusercontent.com/pommecakeVT/cobblemontrdatabase/refs/heads/main/youtube",
 };
 const FALLBACK_AVATAR = "https://i.ibb.co/NgTXMdDW/twitch-update.gif";
 

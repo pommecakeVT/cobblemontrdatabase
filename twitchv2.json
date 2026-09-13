@@ -1,0 +1,996 @@
+[
+{"id": "PLAYER001", "twitch": "AidenSuzuno"},
+{"id": "PLAYER002", "twitch": "Akachan"},
+{"id": "PLAYER003", "twitch": "Akagealice"},
+{"id": "PLAYER004", "twitch": "al_w0onder"},
+{"id": "PLAYER005", "twitch": "all_seen"},
+{"id": "PLAYER006", "twitch": "Ashley_plateada"},
+{"id": "PLAYER007", "twitch": "Astor_Nemura"},
+{"id": "PLAYER008", "twitch": "Aurenndwargonvt"},
+{"id": "PLAYER009", "twitch": "barbak_vt"},
+{"id": "PLAYER010", "twitch": "BattOkami"},
+{"id": "PLAYER011", "twitch": "BaySone"},
+{"id": "PLAYER012", "twitch": "captainmatagot"},
+{"id": "PLAYER013", "twitch": "Chaton_Premier"},
+{"id": "PLAYER014", "twitch": "ChicaCross"},
+{"id": "PLAYER015", "twitch": "chu_vt"},
+{"id": "PLAYER016", "twitch": "CitronVolant"},
+{"id": "PLAYER017", "twitch": "daeriselda"},
+{"id": "PLAYER018", "twitch": "darumanico"},
+{"id": "PLAYER019", "twitch": "e__gloo"},
+{"id": "PLAYER020", "twitch": "EchoRosen"},
+{"id": "PLAYER021", "twitch": "Ein_The_Fool"},
+{"id": "PLAYER022", "twitch": "ekimeiji"},
+{"id": "PLAYER023", "twitch": "ekyuvt"},
+{"id": "PLAYER024", "twitch": "elzbietatv"},
+{"id": "PLAYER025", "twitch": "ema_deus"},
+{"id": "PLAYER026", "twitch": "endoku_chan"},
+{"id": "PLAYER027", "twitch": "Esliane"},
+{"id": "PLAYER028", "twitch": "evosyl"},
+{"id": "PLAYER029", "twitch": "falkorfarland"},
+{"id": "PLAYER030", "twitch": "Fengaryx"},
+{"id": "PLAYER031", "twitch": "FraiseSanguine"},
+{"id": "PLAYER032", "twitch": "gallifan"},
+{"id": "PLAYER033", "twitch": "hana_momiji"},
+{"id": "PLAYER034", "twitch": "Hanamar0u"},
+{"id": "PLAYER035", "twitch": "hativt"},
+{"id": "PLAYER036", "twitch": "HildaMist"},
+{"id": "PLAYER037", "twitch": "hiwamariri"},
+{"id": "PLAYER038", "twitch": "homu_vt"},
+{"id": "PLAYER039", "twitch": "hosarny"},
+{"id": "PLAYER040", "twitch": "hungerneko"},
+{"id": "PLAYER041", "twitch": "ikeaht"},
+{"id": "PLAYER042", "twitch": "Katarsae_abel"},
+{"id": "PLAYER043", "twitch": "katchanvt"},
+{"id": "PLAYER044", "twitch": "Keola"},
+{"id": "PLAYER045", "twitch": "khronosnobody"},
+{"id": "PLAYER046", "twitch": "Kikitchiwi"},
+{"id": "PLAYER047", "twitch": "krwakrwa"},
+{"id": "PLAYER048", "twitch": "la_ptite_tsu"},
+{"id": "PLAYER049", "twitch": "LaRoketteSalade"},
+{"id": "PLAYER050", "twitch": "Lazurine_"},
+{"id": "PLAYER051", "twitch": "LillouneHanae"},
+{"id": "PLAYER052", "twitch": "loona__vt"},
+{"id": "PLAYER053", "twitch": "Lumarisson"},
+{"id": "PLAYER054", "twitch": "lunaderevt"},
+{"id": "PLAYER055", "twitch": "mademoisellemarguerite"},
+{"id": "PLAYER056", "twitch": "maili_vt"},
+{"id": "PLAYER057", "twitch": "malidoudou"},
+{"id": "PLAYER058", "twitch": "manaryuujin"},
+{"id": "PLAYER059", "twitch": "Margauffre"},
+{"id": "PLAYER060", "twitch": "Mayjuuny"},
+{"id": "PLAYER061", "twitch": "Meeilye"},
+{"id": "PLAYER062", "twitch": "Mellumine"},
+{"id": "PLAYER063", "twitch": "Mevolie"},
+{"id": "PLAYER064", "twitch": "Micku_san"},
+{"id": "PLAYER065", "twitch": "moememuri"},
+{"id": "PLAYER066", "twitch": "mommysillica"},
+{"id": "PLAYER067", "twitch": "myzkii_"},
+{"id": "PLAYER068", "twitch": "nekolunavt"},
+{"id": "PLAYER069", "twitch": "Neolorem"},
+{"id": "PLAYER070", "twitch": "NyaoShu"},
+{"id": "PLAYER071", "twitch": "okamiartfurry"},
+{"id": "PLAYER072", "twitch": "okanyaan_"},
+{"id": "PLAYER073", "twitch": "OkPlonk"},
+{"id": "PLAYER074", "twitch": "orion_yamato"},
+{"id": "PLAYER075", "twitch": "pawa_chan"},
+{"id": "PLAYER076", "twitch": "peachypiwie"},
+{"id": "PLAYER077", "twitch": "pinpxnn"},
+{"id": "PLAYER078", "twitch": "PLP_Poulpy"},
+{"id": "PLAYER079", "twitch": "pommecake"},
+{"id": "PLAYER080", "twitch": "poussissi"},
+{"id": "PLAYER081", "twitch": "Riqsop"},
+{"id": "PLAYER082", "twitch": "ryuuna_vt"},
+{"id": "PLAYER083", "twitch": "shiholitchi"},
+{"id": "PLAYER084", "twitch": "Shroom98"},
+{"id": "PLAYER085", "twitch": "shuta_saori"},
+{"id": "PLAYER086", "twitch": "SoulBrook"},
+{"id": "PLAYER087", "twitch": "Sumashu"},
+{"id": "PLAYER088", "twitch": "SuneeToo"},
+{"id": "PLAYER089", "twitch": "Sunyah"},
+{"id": "PLAYER090", "twitch": "titcaro1_"},
+{"id": "PLAYER091", "twitch": "Tylupo"},
+{"id": "PLAYER092", "twitch": "umbriavt"},
+{"id": "PLAYER093", "twitch": "UnePlanteEnPot"},
+{"id": "PLAYER094", "twitch": "valdrac0"},
+{"id": "PLAYER095", "twitch": "Volpoune"},
+{"id": "PLAYER096", "twitch": "waffu_vt"},
+{"id": "PLAYER097", "twitch": "wafwaffle_"},
+{"id": "PLAYER098", "twitch": "Wolfka_vtuberfr"},
+{"id": "PLAYER099", "twitch": "yhusky_kun"},
+{"id": "PLAYER100", "twitch": "yuiicky"},
+{"id": "PLAYER101", "twitch": "yuna_channel"},
+{"id": "PLAYER102", "twitch": "yuu_vt"},
+{"id": "PLAYER103", "twitch": "Yuweiart"},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+]
